@@ -4,9 +4,9 @@ import { AppService } from './app.service';
 @Controller()
 export class AppController {
   constructor(private readonly appService: AppService) {}
-
-  @Get()
-  getHello(): string {
-    return this.appService.getHello();
+  
+  @Get('sacramento')
+  async getSacramentoData(): Promise<Record<string, unknown>> {
+    return await this.appService.getSacramentoData();
   }
 }
